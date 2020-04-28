@@ -1,0 +1,67 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+workspace 'Records.xcworkspace'
+
+target 'Record' do
+
+  project 'Record/Record.xcodeproj'
+  
+  pod 'CTMediator'
+  
+  #调用组件
+  pod 'Login', :path => '../Record/Login/'
+  
+  pod 'Common', :path => '../Record/Common/'
+  
+  pod 'BodyInfo', :path => '../Record/BodyInfo/'
+
+  inhibit_all_warnings!
+  
+end
+
+#登录组件
+target 'Login' do
+
+  project 'Login/Login.xcodeproj'
+  
+  #公共组件
+  pod 'Common', :path => '../Record/Common/'
+
+  inhibit_all_warnings!
+
+end
+
+#公共组件
+target 'Common' do
+
+  project 'Common/Common.xcodeproj'
+
+  inhibit_all_warnings!
+
+end
+
+#身体信息组件
+target 'BodyInfo' do
+
+  project 'BodyInfo/BodyInfo.xcodeproj'
+
+  inhibit_all_warnings!
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
